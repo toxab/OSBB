@@ -31,6 +31,11 @@ docker-compose up -d
 
 create new DB:
 ```bash
+#docker-compose exec mysql bash # -> open bash terminal for mysql
+mysql -u root -p123456
+SHOW DATABASES;
+CREATE DATABASE laravel;
+
 # open mysql client
 address:  127.0.0.1 # or localhost
 user:     root
@@ -45,4 +50,3 @@ composer install
 php artisan key:generate
 php artisan migrate
 ```
-
