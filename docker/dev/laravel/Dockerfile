@@ -43,8 +43,9 @@ RUN docker-php-ext-enable redis
 COPY php.ini /usr/local/etc/php/php.ini
 
 # Install Xdebug
-RUN pecl install xdebug
+RUN pecl install xdebug-2.8.0
 RUN docker-php-ext-enable xdebug
+
 
 # Composer installation
 ENV COMPOSER_ALLOW_SUPERUSER 1
