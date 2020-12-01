@@ -31,7 +31,7 @@ docker-compose up -d
 
 create new DB:
 ```bash
-#docker-compose exec mysql bash # -> open bash terminal for mysql
+docker-compose exec mysql bash # -> open bash terminal for mysql
 mysql -u root -p123456
 SHOW DATABASES;
 CREATE DATABASE laravel;
@@ -48,7 +48,20 @@ init laravel:
 docker-compose exec laravel bash # -> open bash terminal
 composer install
 php artisan key:generate
+
 php artisan migrate
+php artisan db:seed
+or 
+php artisan migrate:refresh --seed
+```
+run tests:
+```bash
+docker-compose exec laravel bash # -> open bash terminal
+php artisan test
+```
+creating test data item in root of laravel in files:
+```bash
+client_example.json and complaint_example.json
 ```
 
 [Run it :rocket:](http://127.0.0.1:8081/)
